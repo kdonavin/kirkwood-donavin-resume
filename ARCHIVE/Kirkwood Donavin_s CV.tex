@@ -1,0 +1,206 @@
+\documentclass[resmargin, line, pifont ,palatino,courier]{res}
+%Packages
+	\usepackage[pdfpagemode=FullScreen, colorlinks=true, linkcolor=blue, citecolor=blue, urlcolor=blue]{hyperref} % email hyperlink
+	%\usepackage[]{geometry} % doesn't work for some reason
+	\usepackage{fancyhdr}
+	\usepackage{longtable}
+	\usepackage[none]{hyphenat} %To stop hyphenation
+	\usepackage[margin = 3cm, right = 7cm]{geometry}
+
+%\textwidth=6.0in
+%\textheight=9.0in
+%\itemsep=0in
+%\parsep=0in
+
+\textheight=9.5in
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhf{}
+\rfoot{{\footnotesize \sc Curriculum Vitae, Donavin, \thepage}}
+
+
+\newenvironment{list1}{
+	\begin{list}{--}{%
+		\setlength{\itemsep}{0in}
+		\setlength{\parsep}{0in} 
+		\setlength{\parskip}{0in}
+		\setlength{\topsep}{0in} 
+		\setlength{\partopsep}{0in}
+		\setlength{\leftmargin}{0.17in}
+	}
+	}{\end{list}}
+\newenvironment{list2}{
+	\begin{list}{$\bullet$}{%
+		\setlength{\itemsep}{0in}
+		\setlength{\parsep}{0in}
+		\setlength{\parskip}{0in}
+		\setlength{\topsep}{0in} 
+		\setlength{\partopsep}{0.25cm}
+		\setlength{\leftmargin}{0.2in}
+  		}
+	}{\end{list}}
+%Command definitions 
+	\newcommand{\tab}[1][1cm]{\hspace*{#1}} 
+	\newcommand{\subtext}[1]{\tighter ~ \newline \tab[0.5cm] \parbox{\fullwidth}{#1}}
+	\newcommand{\titlewidth}{4.25cm}
+	\newcommand{\halfwidth}{5.75cm}
+	\newcommand{\fullwidth}{11.5cm}
+	\newcommand{\tight}{\vspace{-0.5cm}}
+	\newcommand{\tighter}{\vspace{-0.75cm}}
+	
+\begin{document}
+
+\name{\sc Kirkwood P. Donavin - Curriculum Vitae \vspace*{.1in}}
+
+\begin{resume}
+\small
+\section{\sc Personal Information}
+
+\vspace{.05in}
+\begin{tabular}{@{}p{\halfwidth}p{\halfwidth}} %Note: @{} aligns left
+\href{mailto:kirkwood.donavin@gmail.com}{\texttt{kirkwood.donavin@gmail.com}} & (801) 554-6834 \\
+\href{https://www.linkedin.com/in/kirkwood-donavin-22a5831b}{LinkedIn.com:kirkwood-donavin} & 219 E Story Street\\
+\href{https://}{github.com/kdonavin} & Bozeman, Montana 59715\\
+\end{tabular}
+
+\section{\sc Professional \\ Statement}
+
+\emph{I am an economic analyst transitioning towards data science because I love using statistics \& computer science to enhance the work of other professionals. I seek a team environment with quantitative co-workers and mentors that will facilitate my growth as a data scientist. I am able to query, clean and analyze data with statistical rigor and I am enthusiastic about problem-solving with programming languages.} 
+
+\section{\sc Professional Experience} % Align with above
+
+
+\textbf{Economic Research Analyst}
+
+	\subtext{TechLink Center @ Montana State University, Bozeman, June 2015 - June 2017: I was principally involved with TechLink's economic impact studies regarding technology transfer and SBIR/STTR contract agreements between the Department of Defense and private industry.}
+	
+	\tight
+	
+	\begin{itemize}
+		\item Used Python \& R to query and clean ~25,000 economic survey observations of DoD contractors and grant winners stored within TechLink's database
+		\item  Supplied statistics and assisted with draft editing for 3 of TechLink's economic impact studies of DoD SBIR/STTR programs and licensing activity\footnote{\href{https://techlinkcenter.org/2016-report-navy-sbirsttr-economic-impact/}{2016 Report: SBIR/STTR Program Economic Impact, 2000-2013}, \href{http://techlinkcenter.org/articles/2016-report-economic-impact-dod-licensing-2000-2014}{2016 Report: Economic Impact of DoD Licensing, 2000-2014} \& \href{https://techlinkcenter.org/2015-report-natl-economic-impact-techlink-activities-2000-2014/}{2015 Report: Nat’l Economic Impact from TechLink Activities 2000-2014}}
+		\item Performed statistical analyses using linear models to identify factors influencing commercialization within the  Air Force \& Navy SBIR/STTR programs including company size, experience in the SBIR/STTR program, location in the US and age of SBIR/STTR contract
+	\end{itemize}
+		
+\textbf{Research Manager} 
+
+	\subtext{Engineers Without Borders - Montana State University (EWB), Khwisero, Kenya, Summer 2014: I managed a household survey that collected data used to test EWB well \& latrine projects for family welfare improvements. This was the subject of my thesis, \href{https://www.slideshare.net/slideshow/embed_code/key/K6qYsOYvj9u5Ab}{\textit{The Welfare Impacts of Engineers Without Borders in Western Kenya.}}}
+	
+	\tight
+	
+	\begin{itemize}
+		\item Implemented a near-800 household survey
+		\item Managed a team of 16 enumerators and 2 undergraduate assistants
+		\item Instructed a group of 4 undergraduates about data hygiene techniques in order to team-clean the survey data
+	\end{itemize}  		
+				
+\textbf{Graduate Assistant} 
+
+	\subtext{Montana State University, Bozeman, August 2013 -  May 2015}
+	
+	\tight
+
+	\begin{itemize}
+		\item Graded more than 400 essays and problem sets for \textit{Agricultural Marketing}
+		\item Designed assignments \& course notes for \textit{Agricultural Marketing} and \textit{Development Economics}
+		\item Collected raw bushel price data from more than 30 Montana grain elevators
+	\end{itemize}
+
+\section{\sc Other \newline Experience}
+
+\textbf{Mathematics Tutor} 
+
+	\subtext{Westminster College, Mathnasium \& Freelance, Salt Lake City, Utah, 2013 - 2014}
+
+\textbf{Urban Policy Fellow}  
+
+	\subtext{U.S. Conference of Mayors, Washington, District of Columbia, Summer 2010 - funded via \emph{Dickinson Fellowship in Urban Policy Development} awarded through the Cornell College Fellowship Program}
+		
+\newpage
+
+\section{\sc Education}
+
+\textbf{Master of Science in Applied Economics}
+
+	\subtext{Montana State University, Bozeman, May 2015}
+	
+	\tight
+	
+\begin{itemize}
+	\item \textbf{Thesis} \emph{The Welfare Impacts of Engineers Without Borders in Western Kenya}.  This thesis explores the welfare impacts of an undergraduate organization's engineering projects at primary schools in Khwisero, Kenya. Analysis demonstrates that households are spending less time collecting water by accessing EWB bore hole wells. However, no evidence is found for health or educational benefits of  EWB wells or composting latrines.  
+	\item \textbf{Advisor:} \href{http://www.montana.edu/sjanzen}{Dr. Sarah Janzen, Assistant Professor of Economics}
+	\item \textbf{Coursework:} Microeconomic Theory, Macroeconomic Theory, Mathematical Economics, Econometrics (I \& II), GPA: 3.28
+\end{itemize}
+
+\textbf{Bachelor of Arts in International Relations}
+
+	\subtext{Cornell College, Mount Vernon, IA, May 2011}
+	
+	\tight
+	
+	\begin{itemize}
+		\item Graduated cum laude (GPA: 3.51) 
+		\item Minor in Philosophy
+	\end{itemize}
+
+\textbf{Supplemental Studies in Computer Science, Mathematics \& Statistics}
+
+	\subtext{Westminster College, SLC, UT \& Montana State University, Bozeman, MT}
+	
+	\tight
+
+	\begin{itemize}
+		\item \textbf{Purpose:} Preparation for a career in the field of data science
+		\item \textbf{Coursework:} Data Structures \& Algorithms, Multivariable Calculus, Introduction to Real Analysis, Linear Algebra, Probability Theory, Mathematical Statistics
+	\end{itemize}
+
+\section{\sc Honors \& Awards}
+
+
+\textbf{Graduate Meritorious Fellowship} 
+
+	\subtext{The Graduate School, Montana State University, 2013}
+
+\textbf{All-American, Mile Run (3\textsuperscript{rd} Place)}  
+
+	\subtext{NCAA Division III Indoor Track \& Field Championships, March 2011}
+
+\textbf{Most Valuable Track Performer} 
+
+	\subtext{Iowa Intercollegiate Athletic Conference, 2011 Indoor Season}
+
+\section{\sc Community \\Service} 
+
+\textbf{Director, Coach \& Technology Officer}
+	
+	\subtext{Montana Racing Project, January 2015 - Present (Director since 2016)}
+	
+\section{\sc Technical \\ Language Skills}
+
+\verb|R| (professional), \LaTeX~(professional), \verb|Java| (intermediate), \verb|Stata| (intermediate), \verb|Python| (intermediate), \verb|SQL| (beginner)
+
+\section{\sc Interests} 
+Mountain biking, climbing, Linux computing, science fiction
+
+\section{\sc References}
+\begin{tabular}{@{}p{\halfwidth} p{\halfwidth}}
+	
+{\bf \href{http://techlinkcenter.org/staff/dr-will-swearingen-clp}{Will Swearingen}} &  (406) 994-7704 \\
+\parbox[t]{\halfwidth}{Executive Director, \\ TechLink} & \href{mailto:wds@exchange.montana.edu}{\texttt{wds@exchange.montana.edu}}\\
+&\\
+{\bf \href{http://techlinkcenter.org/staff/chris-huvaere}{Chris Huvaere}} &  (406) 994-7736 \\
+\parbox[t]{\halfwidth}{Data Systems Project Manager, \\ TechLink} & \href{mailto:chuvaere@montana.edu}{\texttt{chuvaere@montana.edu}}\\
+&\\
+{\href{http://techlinkcenter.org/node/57762}{\bf Brett R. Cusker}} & (406) 570-0731 \\
+\parbox[t]{\halfwidth}{Associate Director of Defense Programs, \\TechLink} & \href{mailto:brett.cusker@montana.edu}{\texttt{brett.cusker@montana.edu}}\\
+&\\
+{\href{http://www.montana.edu/sjanzen/}{\bf Sarah Janzen}} & (406) 994-3714 \\
+\parbox[t]{\halfwidth}{Asst. Professor of Economics, \\Montana State University} & \href{mailto:sarah.janzen@montana.edu}{\texttt{sarah.janzen@montana.edu}}\\
+&\\
+\end{tabular}	
+
+
+
+
+\end{resume}
+\end{document}

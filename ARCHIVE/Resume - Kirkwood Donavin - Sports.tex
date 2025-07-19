@@ -1,0 +1,168 @@
+\documentclass[resmargin, line]{res}
+%Packages
+	\usepackage{array,ragged2e} %Tabular formating
+	\usepackage[pdfpagemode=FullScreen, colorlinks=true, linkcolor=black,  urlcolor=black]{hyperref} 
+	\usepackage{fancyhdr}
+	\usepackage[margin=1cm]{geometry}
+	\usepackage[none]{hyphenat} %To stop hyphenation
+	\usepackage{xcolor}
+	\usepackage{printlen} %for printing measurements
+	
+%Dimensions
+	\textwidth=16cm
+	%\textheight=9.0in
+	%\itemsep=0in
+	%\parsep=0in
+
+%Custom Definitions 
+	\def \fullwidth{16cm}
+	\def \subwidth{15.5cm}
+	\def \halfwidth{6.5cm}
+	\def \titlewidth{4.25cm}
+
+	\newcommand{\tab}[1][1cm]{\hspace*{#1}} 
+	%PDF Version
+%		\newcommand{\link}[2]{\href{#1}{\color{blue}\underline{\smash{#2}}}} %custom link command
+	%Print Version
+		\newcommand{\link}[2]{\href{#1}{\color{black}\smash{#2}}} %custom link command
+	\newcommand{\text}[1]{\parbox{\fullwidth{}}{#1}}
+	\newcommand{\tight}{\vspace{-0.25cm}}
+	\newcommand{\tighter}{\vspace{-0.75cm}}
+	\newcommand{\subtext}[1]{\tab[0.5cm] \parbox{\subwidth{}}{#1}}
+	\newcommand{\subtitle}[1]{\tighter{} ~ \newline  \emph{\subtext{#1}}}
+
+%Document
+	\renewcommand{\familydefault}{\sfdefault}
+	
+\begin{document}
+
+\name{\bf KIRKWOOD P. DONAVIN}
+
+\begin{resume}
+
+\section{\bf PERSONAL INFORMATION}
+
+\vspace{.05in}
+\begin{tabular}{@{}p{\halfwidth}p{\halfwidth}} %Note: @{} aligns left
+\href{mailto:kirkwood.donavin@gmail.com}{Kirkwood.Donavin@Gmail.com} &
+\link{https://www.linkedin.com/in/kirkwood-donavin}{LinkedIn.com/in/Kirkwood-Donavin}  \\
+(801) 554-6834 &  \\
+\end{tabular}
+
+\tight
+\text{
+	\emph{Former collegiate athlete, DIII All-American and Outdoor Enthusiast seeking opportunities in the sports industry} 
+}
+
+\section{\bf EXPERTISE \&  SKILLS}
+
+\newcolumntype{x}[1]{>{\RaggedRight\arraybackslash}p{#1}}
+
+\def \levelone{(I)}
+\def \leveltwo{(A)}
+
+\begin{tabular}{| x{.45\linewidth} | x{.45\linewidth} |}
+	\hline
+	\textbf{Technical} & \textbf{General} \\
+	\hline
+	Bicycle Building \leveltwo{}, Bicycle Tuning \leveltwo{}, Bicycle Mechanics \levelone{} Ski Tuning \levelone{} & Problem Solving \leveltwo{}, Organization \leveltwo{}, Customer Service \levelone{} \\
+	\hline
+	\multicolumn{2}{l}{Key: \levelone{}: Intermediate, \leveltwo{}: Advanced} \\
+\end{tabular}
+
+\section{\bf SPORTS INDUSTRY EXPERIENCE}
+
+\textbf{Sales Associate -- April 2013 to June 2013}
+
+\subtitle{\link{https://saltlakerunning.com/}{Salt Lake Running Company} -- Utah}
+
+\tight
+
+\subtext{
+	Consulted with customers regarding running goals and matched them to products offered at the store that may help them achieve
+
+	\begin{itemize}
+		\item Performed gait analysis on 50+ customers 
+		\item Fit shoes based on gait, injury history, expected use and most importantly, preference
+		\item Recommended clothing based on the customer's goals, explaining the fabric quality options
+	\end{itemize}
+
+}
+
+\textbf{Sales \& Bicycle Builder -- August 2011 to May 2012}
+
+\subtitle{\link{http://www.bicyclecenter.com/}{Bicycle Center} -- Salt Lake City, Utah}
+
+\tight
+
+\subtext{
+
+	Specialized in Specialized bicycles
+	
+	\begin{itemize}
+		\item Ensured that customers understand bike specification merits and costs
+		\item Advised customers seeking specific components (e.g., clipless pedals) or equipment (e.g., mountain bike shoes)
+		\item Gained mechanical experience building more than 30 new bicycles out of the box for sale on the floor
+	\end{itemize}
+}
+
+\section{\bf OTHER EXPERIENCE} % Align with above
+
+\textbf{Economic Data Analyst -- June 2015 to June 2017 (2 Years)}
+
+\subtitle{\link{https://techlinkcenter.org/about}{TechLink}: The DoD's Primary Technology Licensing Intermediary -- Bozeman, MT}
+
+\tight
+
+\subtext{Statistical consultant \& editor for 3 of \link{https://techlinkcenter.org/services/economic-impact-studies/}{TechLink's economic impact studies} of DoD Small Business Innovation Research (SBIR) programs and licensing activity. Research is used by the DoD to sustain program funding from the U.S. Congress.
+}
+
+\section{\bf VOLUNTEERING \\ \& AWARDS}
+
+\textbf{Coach -- 2016 to 2017}
+
+\subtitle{Tuesday Night Track: A weekly adult track workout and social group -- Bozeman, MT}
+
+\begin{itemize}
+	\item Designed and scheduled 70+ track workouts, mixing shorter power work with longer endurance repeats for runners with diverse goals
+	\item Led warmups, drills, \& repeats while providing encouragement \& feedback
+\end{itemize}
+
+\tight
+
+\textbf{Official -- 2015 to 2017}
+
+\subtitle{USA Track \& Field -- Bozeman, MT}
+
+\tight 
+
+\subtext{Officiated at Montana State University meets gaining experience in jump-event measuring, jump-pit maintenance, as well as finish-line timing with FinishLynx photo finish software}
+
+\tight
+
+\textbf{All-American in the Mile Run -- March 2011}
+
+\subtitle{NCAA, Capital University, Columbus, OH}
+
+\tight
+\subtext{Awarded at the 2011 NCAA Division III Indoor Track \& Field Championship for the Mile Run (3rd)}
+
+\tight
+
+\section{\bf EDUCATION}
+
+\textbf{Master of Science in Applied Economics - May 2015}
+
+\subtitle{\link{http://www.montana.edu/econ/}{Montana State University} -- Department of Agricultural Economics \& Economics --  Bozeman}
+
+\tight
+
+\subtext{\textbf{Thesis --} \link{https://www.slideshare.net/slideshow/embed_code/key/K6qYsOYvj9u5Ab}{The Welfare Impacts of Engineers Without Borders in Western Kenya}}
+
+\tight
+\textbf{Bachelor of Arts in International Relations -- May 2011}
+
+\subtitle{\link{https://www.cornellcollege.edu/about-cornell/index.shtml}{Cornell College} - Mount Vernon, Iowa}
+
+\end{resume}
+\end{document}

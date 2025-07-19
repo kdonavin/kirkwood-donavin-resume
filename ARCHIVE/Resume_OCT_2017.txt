@@ -1,0 +1,57 @@
+Kirkwood P. Donavin - Resume
+
+kirkwood.donavin@gmail.com                      (801) 554-6834
+LinkedIn.com/in/kirkwood-donavin                701 Arapahoe Avenue, #309
+github.com/kdonavin                             Boulder, Colorado 80302
+
+Personal Statement
+
+I love using data science to support intelligent business decisions. I thrive in a 
+team of quantitative professionals and mentors, who in turn encourage my growth 
+as a data scientist. I am able to query, clean, visualize, analyze and predict with 
+statistical rigor and I am enthusiastic about problem-solving with programming 
+languages.
+
+Professional Experience 
+
+Economic Research Analyst - 2 Years (June 2015 - June 2017)
+    TechLink @ Montana State University - Bozeman
+    I was principally involved with TechLink's economic impact studies regarding 
+    technology transfer and SBIR/STTR contract agreements between the 
+    Department of Defense and private industry.
+       * Used Python & R to query and clean ~25,000 economic survey observations
+         of DoD contractors and grant winners stored within TechLink's database
+       * Supplied statistics and assisted with draft editing for 3 of TechLink's
+         economic impact studies of DoD SBIR/STTR programs and licensing
+         activity
+       * Performed statistical analyses using linear models to identify factors
+         influencing commercialization within the Air Force & Navy SBIR/STTR
+         programs including company size, experience in the SBIR/STTR program,
+         location in the US and age of SBIR/STTR contract
+
+Education            
+
+Data Science Immersive Program - Fall 2017
+    Galvanize - Boulder, Colorado
+    A 12-week intensive education in the skills and knowledge required of a professional
+    data scientist. Instruction included:
+        * Python & DS Stack: Matplotlib, NumPy, pandas, SciPy, scikit-learn
+        * Databases Manipulation: SQL & NoSQL
+        * Machine Learning: regression (logistic, regularized), decision trees
+          (random forests, boosted trees), neural networks (multi-layer perceptron),
+          clustering (hierarchical, k-means), support vector machines
+        * Big Data & Processing: AWS, Spark, APIs, text processing,  web 
+          scraping, dimensionality reduction, data visualization
+
+Master of Science in Applied Economics - May 2015
+    Montana State University - Bozeman
+    Thesis - The Welfare Impacts of Engineers Without Borders in Western Kenya
+
+Technical Skills  
+
+    Python (including NumPy, pandas, sci-kit learn, Django), R (including ggplot2), SQL, LaTeX, Java, Bash
+
+Academic Training 
+
+    Data Structures & Algorithms, Machine Learning, Mathematical Statistics & Probability, Multivariable Calculus, Econometrics, Discrete Mathematics, Linear  Algebra
+
