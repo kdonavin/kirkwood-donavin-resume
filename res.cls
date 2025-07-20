@@ -30,7 +30,7 @@
 % Changes for LaTeX2e -- Venkat Krishnamurthy (Aug 7, 2001)
 %
 % Updated by Kirkwood Donavin -- 2015 to 2025, later with help from 
-% Google Gemini. (Thanks Gemini!gi)
+% Google Gemini. (Thanks Gemini!)
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % You can have multiple style options the legal options are:
