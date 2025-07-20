@@ -24,27 +24,25 @@
 	\def \titlewidth{4.25cm}
 
 	\newcommand{\tab}[1][1cm]{\hspace*{#1}} 
-	%PDF Version
-		\newcommand{\link}[2]{\href{#1}{\color{blue}\underline{\smash{#2}}}} %custom link command
-	%Print Version
-% \newcommand{\link}[2]{\href{#1}{\color{black}\smash{#2}}} %custom link command
+	\newcommand{\bref}[2]{\href{#1}{\color{black}\underline{\smash{#2}}}} %custom link command
 	\newcommand{\loose}{\vspace{0.5cm}}
 	\newcommand{\text}[1]{\parbox{\fullwidth{}}{#1}}
 	\newcommand{\tight}{\vspace{-0.25cm}}
 	\newcommand{\tighter}{\vspace{-0.75cm}}
-	\newcommand{\subtext}[1]{\tab[0.5cm] \parbox{\subwidth{}}{#1}}
+	\newcommand{\subtext}[1]{\tab[0.5cm] \parbox{\dimexpr\fullwidth-0.5cm\relax}{#1}}
 	\newcommand{\subtitle}[1]{\vspace{-1cm} ~ \newline  \emph{\subtext{#1}}}
 	
 \begin{document}
 \name{
-	KIRKWOOD P. DONAVIN
+	KIRKWOOD P. DONAVIN -- DATA SCIENTIST
 }
+\tagline{XGBoost \& Ensemble Methods, Natural Language Processing, Time-Series Forecasting}
 \address{
 	\begin{centering}
 		\begin{tabular}{c | c | c | c}
 			\href{mailto:kirkwood.donavin@gmail.com}{Kirkwood.Donavin@Gmail.com} &
 			(801) 554-6834 &
-			\link{https://www.linkedin.com/in/kirkwood-donavin}{LinkedIn.com/in/Kirkwood-Donavin} & \link{https://github.com/kdonavin}{GitHub.com/KDonavin}
+			\bref{https://www.linkedin.com/in/kirkwood-donavin}{LinkedIn.com/in/Kirkwood-Donavin} & \bref{https://github.com/kdonavin}{GitHub.com/KDonavin}
 		\end{tabular} 
 	\end{centering}
 }
@@ -105,7 +103,7 @@ models, testing alternate algorithms, and integrating data embeddings to improve
 \subtext{\textbf{Key Accomplishments:}}
 
 \begin{itemize}
-	\item \textbf{OSTK Product Banners}: designed and built the data model that supports Overstock's first data-driven approach to product banner messaging (e.g., "Best Seller", "Top Rated"). In A/B tests against the prior manual system, our banners demonstrated a lift of \$500K in profit annually
+	\item \textbf{Product Banners}: designed and built the data model that supports Overstock's first data-driven approach to product banner messaging (e.g., "Best Seller", "Top Rated"). In A/B tests against the prior manual system, our banners demonstrated a lift of \$500K in profit annually
 	\item \textbf{Statistical Analysis:} Supplementation of auto-gen. A/B test results with secondary metric $t$-tests, segment breakdowns, and linear models; Statistical consultant for product managers e.g., regarding stat. significance, power, \& sample size
 	\item \textbf{Databases:} Used Presto \& BigQuery SQL every day, comfortable with semi-structured data; Accessed company databases with R \& Python's \texttt{sqlalchemy} for incorporation into advanced analytics (e.g., statistical power, \& financial estimation), SQL scripts tracked with Git, and I administered a BitBucket repository for these scripts for my analytics team
 	\item \textbf{Dashboarding:} Giving non-data colleagues the power to make data-driven decisions; Used LookML or MicroStrategy to build dozens of reports for managers to defend their products and strategize enhancements; tracked various KPIs such as conversion, CTR, friction metrics - exit rate, \& scroll depth
@@ -156,7 +154,7 @@ models, testing alternate algorithms, and integrating data embeddings to improve
 
 \subtext{
 	\textbf{Thesis}: 
-	The Welfare Impacts of Engineers Without Borders in Western Kenya -- https://www.slideshare.net/slideshow/embed\_code/key/K6qYsOYvj9u5Ab
+	\bref{https://www.slideshare.net/slideshow/embed\_code/key/K6qYsOYvj9u5Ab}{The Welfare Impacts of Engineers Without Borders in Western Kenya}
 }
 
 \textbf{B.A of International Relations -- May 2011 -- Cornell College -- Mount Vernon, IA}
