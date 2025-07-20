@@ -1,4 +1,4 @@
-% RESUME DOCUMENT STYLE -- Released 23 Nov 1989
+% RESUME DOCUMENT STYLE -- Original Release 23 Nov 1989
 %    for LaTeX version 2.09
 % Copyright (C) 1988,1989 by Michael DeCorte
 
@@ -14,7 +14,7 @@
 % that the copies are not made or distributed for resale, and that
 % the copyright notice and this notice are retained.
 %
-% THIS WORK IS PROVIDED ON AN "AS IS" BASIS.  THE AUTHOR PROVIDES NO
+% THIS WORK IS PROVIDED ON A "AS IS" BASIS.  THE AUTHOR PROVIDES NO
 % WARRANTY WHATSOEVER, EITHER EXPRESS OR IMPLIED, REGARDING THE WORK,
 % INCLUDING WARRANTIES WITH RESPECT TO ITS MERCHANTABILITY OR FITNESS
 % FOR ANY PARTICULAR PURPOSE.
@@ -29,19 +29,22 @@
 %
 % Changes for LaTeX2e -- Venkat Krishnamurthy (Aug 7, 2001)
 %
+% Updated by Kirkwood Donavin -- 2015 to 2025, later with help from 
+% Google Gemini. (Thanks Gemini!)
+%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % You can have multiple style options the legal options are:
 %
 %   centered	the name and address are centered at the top of the
 %		page (default)
 %
-%   line	the name is the left with a horizontal line then 
+%   line	the name is the left with a horizontal line then
 %		the address to the right
 %
 %   overlapped	the section titles overlap the body text (default)
 %
 %   resmargin	the section titles are to the left of the body text
-%		
+%
 %   11pt	use 11 point fonts instead of 10 point fonts
 %
 %   12pt	use 12 point fonts instead of 10 point fonts
@@ -64,10 +67,12 @@
 %		this can be called twice if you have two addresses
 %		use \\'s to indicate where either line breaks or
 %		comas should go
-%	
-%	\statement{text} 
+%
+%	\statement{text}
 %		defines a personal or professional statement to accompany the name and
 %		and address.
+%
+%   \tagline{text} defines a tagline to appear under the name and before addresses.
 %
 %   \opening	this prints your name and address at that spot
 %		this is not normally needed, as \begin{resume}
@@ -80,13 +85,13 @@
 %
 %   \section{text}
 %		This prints 'text' in the left hand margin.
-%		Its exact placement depends on what the style 
+%		Its exact placement depends on what the style
 %		options has been set to. (overlapped or margin)
 %		You should use \\ to start a new line.	If the
 %		style option is margin, the \\ is converted
 %		to a space.
 %		To use this in any of the list environments, put
-%		the \section after the \item[] but before the 
+%		the \section after the \item[] but before the
 %		text.
 %		Eg.
 %		\begin{itemize}
@@ -118,7 +123,7 @@
 %		The format will eventually be used to make several
 %		tabular environments and you are defining the number of columns
 %		and the placement of text within the columns of the tabulars.
-%		Each row is terminated by a \\.  Any number of options can 
+%		Each row is terminated by a \\.  Any number of options can
 %		be on a line, they will each be set in their own columns.
 %		Any of the options except \body may be left out.
 %
@@ -169,6 +174,9 @@
 % namefont	the font used to print your name
 %		use \renewcommand to change it
 %
+% taglinefont	the font used to print your tagline
+%		use \renewcommand to change it
+%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % THINGS TO DO
 %
@@ -191,7 +199,7 @@
 
 \PassOptionsToClass{11pt,12pt}{article}
 \LoadClassWithOptions{article}
-\RequirePackage{calc} %For line width calculation 
+\RequirePackage{calc} %For line width calculation
 
 \newif\if@line
 \newif\if@margin
@@ -221,6 +229,12 @@
 \def\@printcentername{\begingroup
 	% print the name centered
 	\leavevmode\hbox to \textwidth{\hfil\@tablebox{\namefont\@name}\hfil}\par
+	\@ifundefined{@tagline}{%
+	% do nothing
+	}{%
+		\vskip 1pt % Small vertical space after name
+		\leavevmode\hbox to \textwidth{\hfil\@tablebox{\taglinefont\@tagline}\hfil}\par
+	}%
 	\@ifundefined{@addressone}{%
 	% do nothing
 	}{%
@@ -242,9 +256,15 @@
 % the page with a hline in between
 %
 \def\namefont{\large\bf}
+\def\taglinefont{\normalsize} % Define the font for the tagline
 \def\@linename{\begingroup
   \def\\{, }
   {\namefont\@name}
+  \@ifundefined{@tagline}{%
+  % do nothing
+  }{%
+    \par\noindent{\taglinefont\@tagline} % New line for tagline
+  }%
   \vskip 2pt
   \fullline
   \vskip 2pt
@@ -265,7 +285,7 @@
 % There are two types of headings:
 % 1) one with the name centered and the address centered or
 %    in the left and right side if there are two address
-% 2) one where the name is in the upper left corner 
+% 2) one where the name is in the upper left corner
 %    the a line accross the paper
 %    then the address all on one line in the right corner
 %    the second address will be directly below the first if defined
@@ -321,7 +341,7 @@
   % this macro may be called in a tabular.  Special code must be written
   % to accomodate this.  In LaTeX, a tabular is made out of hboxes.
   % TeX never goes into horizontal mode because of this; it only
-  % gets into vertical mode and restricted horizontal mode.  Certain 
+  % gets into vertical mode and restricted horizontal mode.  Certain
   % indenting problems must be handled because of this.  They
   % are delt with at the end of this routine.
   % It is also necessary to close the hbox that was created before
@@ -366,12 +386,12 @@
       \raggedright     % you don't want this filled out to the right margin
       \sectionfont
       #1\vss	       % Go into horizontal mode; do the paragraph;
-		       % go into vertical mode; add some negative glue 
+		       % go into vertical mode; add some negative glue
 		       % to give a box of 0pt height and depth
     }%
   }%
   \addpenalty{-\@secpenalty} % this would be a bad place for a page break
-  \vskip-\baselineskip % when the next box is processed, baselineskip 
+  \vskip-\baselineskip % when the next box is processed, baselineskip
 		       % glue will be added (the box has no depth because of
 		       % the \vss; therefore, we don't have to worry about
 		       % \lineskiplimit).  This -\baselineskip glue
@@ -484,8 +504,8 @@
 \setlength{\linelength}{\resumewidth+3cm}
 
 \def\fullline{		% hrules only listen to \hoffset
-  \nointerlineskip	% so I have this code	  
-  \moveleft\hoffset\vbox{\hrule width\linelength} 
+  \nointerlineskip	% so I have this code
+  \moveleft\hoffset\vbox{\hrule width\linelength}
   \nointerlineskip
 }
 
@@ -500,6 +520,13 @@
 \def\name#1{\def\@name{#1}}
 
 \def\@name{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% use this to define your tagline
+%
+\def\tagline#1{\def\@tagline{#1}}
+
+\def\@tagline{}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % use this to define your address, this may be called more than once.
@@ -517,7 +544,7 @@
 %
 \def\opening{\def\@opening{}
   \begingroup
-  \leftskip=-\hoffset	     % I use leftskip to move things to the left as 
+  \leftskip=-\hoffset	     % I use leftskip to move things to the left as
   \advance\textwidth\hoffset % changing hoffset doesn't work. But this
   \hsize=\textwidth	     % doesn't really work as hboxes are rules
 			     % are unaffeted
@@ -576,7 +603,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % \@format{name}{justify}
-% will define \print@#1 to print it's one argument 
+% will define \print@#1 to print it's one argument
 % justified according to #2 which can be
 %	  l = left
 %	  r = right
@@ -602,7 +629,7 @@
 %  \dates{pos}
 %  \title{pos}
 %  \body	    (for the body of the position environment)
-%   where pos is 
+%   where pos is
 %     l for left
 %     r for right
 %     c for center
@@ -797,7 +824,7 @@
 \parskip \baselineskip
 \setcounter{secnumdepth}{0}
 \def\@listI{\leftmargin\leftmargini
-\topsep 0pt 
+\topsep 0pt
 \parskip 0pt
 \partopsep 2pt plus 2pt
 \parsep 2pt plus 2pt
@@ -812,4 +839,3 @@
 \end{format}
 
 \let\section\@@section
-
