@@ -591,10 +591,48 @@
 %   \body
 %
 
-\def\employer#1{\def\@employer{\print@employer{#1}}}
-\def\location#1{\def\@location{\print@location{#1}}}
-\def\dates#1{\def\@dates{\print@dates{#1}}}
-\def\title#1{\def\@title{\print@title{#1}}}
+\def\employer#1{\def\@employer{\print@employer{#1}}\def\@employertext{#1}}
+\def\location#1{\def\@location{\print@location{#1}}\def\@locationtext{#1}}
+\def\dates#1{\def\@dates{\print@dates{#1}}\def\@datestext{#1}}
+% Define fonts and body indent for position formatting
+\def\title#1{\def\@title{\print@title{#1}}\def\@titletext{#1}}
+\def\titlefont{\bfseries} % default title font (bold)
+\newdimen\bodyindent
+\bodyindent=0.5cm
+\def\bodyfont{} % default body font (leave unchanged)
+% Define per-field fonts (empty by default, override in document if desired)
+\def\employerfont{}
+\def\datesfont{}
+\def\locationfont{}
+
+% Print a single-line position header with fields joined by em-dashes
+% Order: title -- dates -- employer -- location
+\def\print@singleheader{%
+  \begingroup
+    \bfseries % make the whole header bold
+    \let\first@fld\relax
+    % helper to print a field if its raw text macro exists
+    \def\maybe@print##1{%
+      \@ifundefined{@##1text}{% not defined -> nothing
+      }{%
+        \ifx\relax\first@fld\relax
+          \def\first@fld{1}% first printed field, no separator
+        \else
+          \nobreak\nobreak\ \textemdash\ \nobreak%
+        \fi
+        % Use the per-field font only for content, but since header is bolded
+        % by \bfseries above we keep the field font small (applied inside group)
+        {\csname ##1font\endcsname \csname @##1text\endcsname}%
+      }%
+    }%
+    % print in desired order: title, employer, location, dates (dates last)
+    \maybe@print{title}%
+    \maybe@print{employer}%
+    \maybe@print{location}%
+    \maybe@print{dates}%
+    \par
+  \endgroup
+}
 
 \let\l@justify\raggedright
 \let\r@justify\raggedleft
@@ -615,7 +653,13 @@
 %
 \def\@format#1#2{%
   \expandafter\gdef\csname print@#1\endcsname##1{%
-    {\csname#2@justify\endcsname##1\par}}
+    % Wrap printed field with appropriate font and justification.
+    {\csname#2@justify\endcsname
+       \ifx\relax\csname#1font\endcsname\relax
+         ##1\par
+       \else
+         {\csname#1font\endcsname ##1}\par
+       \fi}}
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -786,17 +830,23 @@
   {%
    \begingroup
      \par
-       \the\tabular@head
-%     \addpenalty{-\@secpenalty}% bad place for a page break
-     \penalty -\@secpenalty % bad place for a page break
+       % print a single-line header (title -- dates -- employer -- location)
+       \print@singleheader
+     % bad place for a page break
+     \penalty -\@secpenalty
      \penalty 10000
+     % set body indentation and no paragraph indent for the job description
+     \leftskip=\bodyindent
+     \parindent=0pt
      \ignorespaces
   }{%
-       \the\tabular@tail
-%     \addpenalty{\@secpenalty}% good place for a page break
-     \penalty \@secpenalty % good place for a page break
+    % reset leftskip so following content isn't indented
+    \leftskip=0pt
+    % good place for a page break
+    \penalty \@secpenalty
+    % (tabular tail is ignored when using single-line headers)
     \endgroup
-}
+  }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % DEFAULTS: (the rest of them)

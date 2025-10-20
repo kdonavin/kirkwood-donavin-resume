@@ -26,7 +26,6 @@
 	\newcommand{\tab}[1][1cm]{\hspace*{#1}} 
 	\newcommand{\bref}[2]{\href{#1}{\color{black}\underline{\smash{#2}}}} %custom link command
 	\newcommand{\loose}{\vspace{0.5cm}}
-	\newcommand{\text}[1]{\parbox{\fullwidth{}}{#1}}
 	\newcommand{\tight}{\vspace{-0.25cm}}
 	\newcommand{\tighter}{\vspace{-0.75cm}}
 	\newcommand{\subtext}[1]{\tab[0.5cm] \parbox{\dimexpr\fullwidth-0.5cm\relax}{#1}}
@@ -73,76 +72,95 @@ models, testing alternate algorithms, and integrating data embeddings to improve
  
 \section{EXPERIENCE}
 
-\textbf{Data Scientist -- Mar 2024 -- 10 mos -- DEPT Agency -- Remote (Salt Lake City, UT)}
+% Data Scientist (DEPT Agency)
+\title{Data Scientist}
+\employer{DEPT Agency}
+\dates{Mar 2024 -- 10 mos}
+\location{Remote (Salt Lake City, UT)}
+\begin{position}
+	Marketing data science for DEPT clients. Specialized in search engine ads, forecasting available ad impressions, and creating an ad-spend budgeting tool using prediction models based on historical data.
 
-\subtext{Marketing data science for DEPT clients. Specialized in search engine ads, forecasting available ad impressions, and creating an ad-spend budgeting tool using prediction models based on historical data.}
+    \textbf{Key Accomplishments:}
+	\begin{itemize}
+		\item \textbf{Search Engine Ad Impression Forecasting:} Took over responsibility for a TensorFlow ad impression forecasting LSTM model
+		\item \textbf{Ad-Budget Recommendations:} Built an ad-budget recommendation tool using XGBoost ensemble models that demonstrated our client was overspending on ads by \$100Ks in some ad categories
+		\item \textbf{Statistical Consulting:} various colleagues and projects. Gave an internal presentation on $p$-values
+	\end{itemize}
+\end{position}
 
-\subtext{\textbf{Key Accomplishments:}}
+% ML Scientist (Bed Bath & Beyond)
+\title{ML Scientist}
+\employer{Bed Bath \& Beyond}
+\dates{Aug 2022 -- 1 yr 5 mos}
+\location{Hybrid (Salt Lake City, UT)}
+\begin{position}
+	Promoted to the ML team supporting sponsored ads as the junior scientist specializing in the application of XGBoost ensemble methods, and text embeddings to produce conversion (i.e., purchase) predictions. Proven track record in optimizing models, including testing XGBoost against a VowPal Wabbit production model, resulting in superior log-loss performance. Implemented text embedding, further elevating predictive accuracy.
 
-\begin{itemize}
-	\item \textbf{Search Engine Ad Impression Forecasting:} Took over responsibility for a TensorFlow ad impression forecasting LSTM model
-	\item \textbf{Ad-Budget Recommendations:} Built an ad-budget recommendation tool using XGBoost ensemble models that demonstrated our client was overspending on ads by \$100Ks in some ad categories
-	\item \textbf{Statistical Consulting:} various colleagues and projects. Gave an internal presentation on $p$-values
-\end{itemize}
+	\textbf{Key Accomplishments:}
+	\begin{itemize}
+		\item \textbf{Conversion Prediction:} Tested and produced several XGBoost models for conversion prediction that improved log-loss performance compared with Vowpal Wabbit production model
+		\item \textbf{Textual Embeddings:} Integrated embeddings into conversion prediction models. Built a Sci-Kit Learn TFIDF + Singular Value Decomposition (SVD) embedding class and compared model performance improvements with a fastText model. The latter toolset was demonstrated to be the more performant approach.
+	\end{itemize}
+\end{position}
 
-\textbf{ML Scientist -- Aug 2022 -- 1 yr 5 mos -- Bed Bath \& Beyond -- Hybrid (Salt Lake City, UT)}
+% Senior Data Analyst (Overstock)
+\title{Senior Data Analyst}
+\employer{Overstock}
+\dates{Jun 2019 -- 3 yrs 3 mos}
+\location{Salt Lake City, UT}
+\begin{position}
+	Supplied analytics and statistical consulting for OSTK's internal search, sponsored products, and recommendations teams
 
-\subtext{Promoted to the ML team supporting sponsored ads as the junior scientist specializing in the application of XGBoost ensemble methods, and text embeddings to produce conversion (i.e., purchase) predictions. Proven track record in optimizing models, including testing XGBoost against a VowPal Wabbit production model, resulting in superior log-loss performance. Implemented text embedding, further elevating predictive accuracy.}
+	\textbf{Key Accomplishments:}
+	\begin{itemize}
+		\item \textbf{Product Banners}: designed and built the data model that supports Overstock's first data-driven approach to product banner messaging (e.g., "Best Seller", "Top Rated"). In A/B tests against the prior manual system, our banners demonstrated a lift of \$500K in profit annually
+		\item \textbf{Statistical Analysis:} Supplementation of auto-gen. A/B test results with secondary metric $t$-tests, segment breakdowns, and linear models; Statistical consultant for product managers e.g., regarding stat. significance, power, \& sample size
+		\item \textbf{Databases:} Used Presto \& BigQuery SQL every day, comfortable with semi-structured data; Accessed company databases with R \& Python's \texttt{sqlalchemy} for incorporation into advanced analytics (e.g., statistical power, \& financial estimation), SQL scripts tracked with Git, and I administered a BitBucket repository for these scripts for my analytics team
+		\item \textbf{Dashboarding:} Giving non-data colleagues the power to make data-driven decisions; Used LookML or MicroStrategy to build dozens of reports for managers to defend their products and strategize enhancements; tracked various KPIs such as conversion, CTR, friction metrics - exit rate, \& scroll depth
+	\end{itemize}
+\end{position}
 
-\subtext{\textbf{Key Accomplishments:}}
+\title{BI Analyst I/II}
+\employer{Womply}
+\dates{May 2018 -- 1 yr 2 mos}
+\location{Silicon Slopes, UT}
+\begin{position}
+	Was promoted to the level-2 role in order to focus on statistical analyses and report writing to answer larger BI questions
 
-\begin{itemize}
-	\item \textbf{Conversion Prediction:} Tested and produced several XGBoost models for conversion prediction that improved log-loss performance compared with Vowpal Wabbit production model
-	\item \textbf{Textual Embeddings:} Integrated embeddings into conversion prediction models. Built a Sci-Kit Learn TFIDF + Singular Value Decomposition (SVD) embedding class and compared model performance improvements with a fastText model. The latter toolset was demonstrated to be the more performant approach.
-\end{itemize}
+	\textbf{Key Accomplishments:}
+	\begin{itemize}
+		\item \textbf{Data Modeling \& Dash-boarding:} Modeled tables, pulled datasets using Presto SQL, AWS Athena, and Snowflake SQL, built Domo reports for various Womply business units
+		\item \textbf{Statistical Analysis:} Statistical  \& graphical analyses using RMarkdown; contributor in large study \textit{How online reviews impact small business revenue}. The results demonstrated that Google ratings are positively correlated to revenue, while Yelp ratings are not. \\
+		\item \textbf{Python Programming:} Managed Python scripts running ETL processes for the Analytics team and the Finance team
+	\end{itemize}
+\end{position}
 
-\textbf{Senior Data Analyst -- Jun 2019 -- 3 yrs 3 mos -- Overstock -- Salt Lake City, UT}
+\title{Data Science Intern}
+\employer{New Belgium Brewery}
+\dates{Nov 2017 -- 2 mos}
+\location{Fort Collins, CO}
+\begin{position}
+	An internship and capstone project to conclude the Data Science Immersive program at Galvanize. Designed and implemented a neural network that took chemical measurements of beer batches supplied by New Belgium, and predicted whether a panel of company beer tasters would reject that batch for distribution
 
-\subtext{Supplied analytics and statistical consulting for OSTK's internal search, sponsored products, and recommendations teams}
+	\begin{itemize}
+		\item \textbf{Inebriated Neural Network:} A model with a taste for beer. A multi-layer perceptron (MLP) neural network (\texttt{sklearn}) predicts beer tasters’ disapproval using chemical measurements of New Belgium brew, identified $\sim$\hspace{-1mm}~4 out of 5 test cases when a batch would be rejected by the taste panel. Project URL: github.com/kdonavin/inebriated\_neural\_network
+	\end{itemize}
+\end{position}
 
-\subtext{\textbf{Key Accomplishments:}}
+\title{Economic Data Analyst}
+\employer{TechLink Center}
+\dates{Jun 2015 -- 2 yrs 1 mo}
+\location{Bozeman, MT}
+\begin{position}
+Principally involved with TechLink's economic impact studies regarding technology transfer and Small Business Innovation Research (SBIR) contract agreements between the Department of Defense and private industry
 
-\begin{itemize}
-	\item \textbf{Product Banners}: designed and built the data model that supports Overstock's first data-driven approach to product banner messaging (e.g., "Best Seller", "Top Rated"). In A/B tests against the prior manual system, our banners demonstrated a lift of \$500K in profit annually
-	\item \textbf{Statistical Analysis:} Supplementation of auto-gen. A/B test results with secondary metric $t$-tests, segment breakdowns, and linear models; Statistical consultant for product managers e.g., regarding stat. significance, power, \& sample size
-	\item \textbf{Databases:} Used Presto \& BigQuery SQL every day, comfortable with semi-structured data; Accessed company databases with R \& Python's \texttt{sqlalchemy} for incorporation into advanced analytics (e.g., statistical power, \& financial estimation), SQL scripts tracked with Git, and I administered a BitBucket repository for these scripts for my analytics team
-	\item \textbf{Dashboarding:} Giving non-data colleagues the power to make data-driven decisions; Used LookML or MicroStrategy to build dozens of reports for managers to defend their products and strategize enhancements; tracked various KPIs such as conversion, CTR, friction metrics - exit rate, \& scroll depth
-\end{itemize}
-
-\textbf{BI Analyst I/II -- May 2018 -- 1 yr 2 mos -- Womply -- Silicon Slopes, UT}
-
-\subtext{Was promoted to the level-2 role in order to focus on statistical analyses and report writing to answer larger BI questions}
-
-\subtext{\textbf{Key Accomplishments:}}
-	
-\begin{itemize}
-	\item \textbf{Data Modeling \& Dash-boarding:} Modeled tables, pulled datasets using Presto SQL, AWS Athena, and Snowflake SQL, built Domo reports for various Womply business units
-	\item \textbf{Statistical Analysis:} Statistical  \& graphical analyses using RMarkdown; contributor in large study \textit{How online reviews impact small business revenue}. The results demonstrated that Google ratings are positively correlated to revenue, while Yelp ratings are not. \\
-	Blog post URL: womply.com/impact-of-online-reviews-on-small-business-revenue/
-	\item \textbf{Python Programming:} Managed Python scripts running ETL processes for the Analytics team and the Finance team
-\end{itemize}
-
-\textbf{Data Science Intern --  Nov 2017 -- 2 mos -- New Belgium Brewery -- Fort Collins, CO}
-
-\subtext{An internship and capstone project to conclude the Data Science Immersive program at Galvanize. Designed and implemented a neural network that took chemical measurements of beer batches supplied by New Belgium, and predicted whether a panel of company beer tasters would reject that batch for distribution}
-
-\begin{itemize}
-	\item \textbf{Inebriated Neural Network:} A model with a taste for beer. A multi-layer perceptron (MLP) neural network (\texttt{sklearn}) predicts beer tasters’ disapproval using chemical measurements of New Belgium brew, identified $\sim$\hspace{-1mm}~4 out of 5 test cases when a batch would be rejected by the taste panel. Project URL: github.com/kdonavin/inebriated\_neural\_network
-\end{itemize}
-
-\textbf{Economic Data Analyst -- Jun 2015 -- 2 yrs 1 mo -- TechLink Center -- Bozeman, MT}
-
-\subtext{
-	Principally involved with TechLink's economic impact studies regarding technology transfer and Small Business Innovation Research (SBIR) contract agreements between the Department of Defense and private industry
-}
-
-\subtext{\textbf{Key Accomplishments:}}
-	
-\begin{itemize}
-	\item \textbf{Data Wrangling:} Cleaned records with R, queried records from a Django database from 25,000 company survey records of DoD contractors and grant award winners
-	\item \textbf{Statistical Consultant \& Editor:} For 3 of TechLink’s economic impact studies of DoD Small Business Innovation Research (SBIR) programs and licensing activity, the DoD used this research to defend program funding in front of the U.S. Congress
-	\item \textbf{Independent Research:} linearly modeled the factors influencing commercialization within Air Force \& Navy SBIR programs including company size, experience in the program, location in the US, and age of the small business grant
-\end{itemize} 
+	\textbf{Key Accomplishments:}
+	\begin{itemize}
+		\item \textbf{Data Wrangling:} Cleaned records with R, queried records from a Django database from 25,000 company survey records of DoD contractors and grant award winners
+		\item \textbf{Statistical Consultant \& Editor:} For 3 of TechLink’s economic impact studies of DoD Small Business Innovation Research (SBIR) programs and licensing activity, the DoD used this research to defend program funding in front of the U.S. Congress
+		\item \textbf{Independent Research:} linearly modeled the factors influencing commercialization within Air Force \& Navy SBIR programs including company size, experience in the program, location in the US, and age of the small business grant
+	\end{itemize}
+\end{position}
 
 \loose
 \fullline
