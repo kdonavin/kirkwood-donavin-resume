@@ -216,11 +216,9 @@
 \nofiles	     % resume's don't need .aux files
 
 
-\newtoks\tabular@text		    % holds the current list being processed
-\newtoks\tabular@head		    % holds the head tabular list
-\newtoks\tabular@tail		    % holds the tail tabular list
-\newtoks\@ta			    % used by \@append
-\newtoks\undefined@token\undefined@token={}
+% Legacy token registers for the old format/tabular machinery removed.
+% The class now uses \print@singleheader and the position environment
+% to render job headers; no token-list assembly is needed.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % prints a centered name with the address centered
@@ -695,45 +693,14 @@
 % \title{c}\\
 % \end{format}
 
-\newcounter{numberofcolumns}
-\newenvironment{format}{%
-  \def\end@line@head{\append@tabular@head{tabular@text}\tabular@text={}%
-    \c@numberofcolumns 0}
-  \def\end@line@tail{\append@tabular@tail{tabular@text}\tabular@text={}%
-    \c@numberofcolumns 0}
-  \tabular@text={}
-  \tabular@head={}
-  \tabular@tail={}
-  \c@numberofcolumns 0
-  \let\\=\end@line@head
-  \def\employer##1{\advance\c@numberofcolumns 1
-		   \@format{employer}{##1}
-		   \append@tabular@text{employer}}
-  \def\location##1{\advance\c@numberofcolumns 1
-		   \@format{location}{##1}
-		   \append@tabular@text{location}}
-  \def\dates##1{\advance\c@numberofcolumns 1
-		\@format{dates}{##1}
-		\append@tabular@text{dates}}
-  \def\title##1{\advance\c@numberofcolumns 1
-		 \@format{title}{##1}
-		\append@tabular@text{title}}
-  \def\body{\iftoks\tabular@head\undefined@token\then
-	    \else
-	      \@append{\noexpand\\}\to\tabular@head
-	    \skotfi
-	    \let\\=\end@line@tail}}{}
+% format environment removed - headers are handled by \print@singleheader
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %taken from page 378 of TeXbook but freely hacked
 %
 % appends the expansion of #1 to the token list #2
 
-\def\@append#1\to#2{%
-  \@ta=\expandafter{#1}%
-  \xdef\@append@temp{\the#2\the\@ta}
-  \global#2=\expandafter{\@append@temp}%
-}
+% \@append removed: legacy token-list concatenation no longer required.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -761,14 +728,10 @@
 % used by append@tabular@head and append@tabular@tail
 %
 
-\def\append@tabular@text#1{%
-\iftoks\tabular@text\undefined@token\then
-  \global\tabular@text=\expandafter{\csname @#1\endcsname}
-\else
-  \@append{&}\to\tabular@text
-  \@append{\csname @#1\endcsname}\to\tabular@text
-\skotfi
-}
+% Legacy tabular assembly helpers removed. The class now uses
+% \print@singleheader for position headers and does not build
+% tokenized tabular head/tail/text structures anymore.
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % append@tabular@head
@@ -780,21 +743,7 @@
 % used to define \tabular@head for the tabular environment
 % used by the position environment
 %
-\def\append@tabular@head#1{%
-  \ifnum\the\c@numberofcolumns=0\relax
-  \else
-    \iftoks\tabular@head\undefined@token\then
-      \relax
-    \else
-      \@append{\noexpand\\}\to\tabular@head
-      \@append{\noexpand\penalty-\@secpenalty}\to\tabular@head
-    \skotfi
-    \@append{\noexpand\begin{ncolumn}}\to\tabular@head
-    \@append{\expandafter{\the\c@numberofcolumns}}\to\tabular@head
-    \@append{\the\csname#1\endcsname}\to\tabular@head
-    \@append{\noexpand\end{ncolumn}}\to\tabular@head
-  \fi
-}
+% append@tabular@head removed: no longer used.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % append@tabular@tail
@@ -806,20 +755,7 @@
 % used to define \tabular@tail for the tabular environment
 % used by the position environment
 %
-\def\append@tabular@tail#1{%
-  \ifnum\the\c@numberofcolumns=0\relax
-  \else
-    \iftoks\tabular@tail\undefined@token\then
-    \else
-      \@append{\noexpand\\}\to\tabular@tail
-      \@append{\noexpand\penalty-\@secpenalty}\to\tabular@tail
-    \skotfi
-    \@append{\noexpand\begin{ncolumn}}\to\tabular@tail
-    \@append{\expandafter{\the\c@numberofcolumns}}\to\tabular@tail
-    \@append{\the\csname#1\endcsname}\to\tabular@tail
-    \@append{\noexpand\end{ncolumn}}\to\tabular@tail
-  \fi
-}
+% append@tabular@tail removed: no longer used.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % put the actual job descriptions here
@@ -882,10 +818,7 @@
 
 \pagestyle{empty}  % don't want page numbers
 
-\begin{format}
-\title{l}\employer{r}\\
-\location{l}\dates{r}\\
-\body\\
-\end{format}
+% Default format block removed — the class prints single-line
+% headers via \print@singleheader inside the position environment.
 
 \let\section\@@section
