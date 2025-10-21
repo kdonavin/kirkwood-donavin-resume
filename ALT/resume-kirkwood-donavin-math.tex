@@ -1,0 +1,187 @@
+\documentclass[resmargin, centered, 10pt]{res}
+%Packages
+	\usepackage{array,ragged2e} %Tabular formating
+	\usepackage[pdfpagemode=FullScreen, colorlinks=true, linkcolor=black,  urlcolor=black]{hyperref} 
+	\usepackage{fancyhdr}
+	\usepackage[margin=1c m]{geometry}
+	\usepackage[none]{hyphenat} %To stop hyphenation
+	\usepackage{multicol}
+	\usepackage{printlen} %for printing measurements
+	\usepackage{xcolor}
+
+%Dimensions, Settings & Variables
+	\textwidth=16cm
+	\textheight=26cm
+%	\itemsep=0in	
+	%\parsep=0in
+	\setlength{\columnseprule}{1pt} %For multicols
+	\renewcommand{\familydefault}{\sfdefault}
+	
+%CuLi
+	\def \fullwidth{\textwidth}
+	\def \subwidth{13.5cm}
+	\def \halfwidth{6.5cm}
+	\def \titlewidth{4.25cm}
+
+	\newcommand{\tab}[1][1cm]{\hspace*{#1}} 
+	\newcommand{\bref}[2]{\href{#1}{\color{black}\underline{\smash{#2}}}} %custom link command
+	\newcommand{\loose}{\vspace{0.5cm}}
+	\newcommand{\tight}{\vspace{-0.25cm}}
+	\newcommand{\tighter}{\vspace{-0.75cm}}
+	\newcommand{\subtext}[1]{\tab[0.5cm] \parbox{\dimexpr\fullwidth-0.5cm\relax}{#1}}
+	\newcommand{\subtitle}[1]{\vspace{-1cm} ~ \newline  \emph{\subtext{#1}}}
+	
+\begin{document}
+\name{
+	KIRKWOOD P. DONAVIN -- MATHEMATICS EDUCATOR
+}
+% \tagline{Former data scientist -- Passionate about mathematics \& education}
+\address{
+	\begin{centering}
+		\begin{tabular}{c | c | c | c}
+			\href{mailto:kirkwood.donavin@gmail.com}{Kirkwood.Donavin@Gmail.com} &
+			(801) 554-6834 &
+			\bref{https://www.linkedin.com/in/kirkwood-donavin}{LinkedIn.com/in/Kirkwood-Donavin} & \bref{https://github.com/kdonavin}{GitHub.com/KDonavin}
+		\end{tabular} 
+	\end{centering}
+}
+
+\begin{resume}
+	
+\fullline
+
+\section{SUMMARY}
+
+Former data scientist and experienced math educator with classroom and tutoring experience spanning K–12 and college levels. Comfortable teaching Integrated Math 1 through AP Calculus AB, skilled at executing curriculum plans, creating engaging lesson materials, and communicating effectively with students, parents, and colleagues.
+
+\loose
+\fullline
+
+\section{HIGHLIGHTS}
+
+\begin{itemize}
+	\item \textbf{Expertise}: machine learning, natural language processing (NLP), and statistical analysis
+	\item \textbf{Data Skills}: Querying, cleansing, visualizing, analyzing, predicting, forecasting, testing
+	\item \textbf{Languages}: Python, R, SQL, and Bash
+	\item \textbf{Toolsets}: XGBoost, Sci-Kit Learn, Pandas, TensorFlow, Docker, Prophet, Jupyter Lab, RMarkdown, Snowflake, Presto, BigQuery, SQLAlchemy, Git, GitHub, BitBucket, LookML (Looker)
+\end{itemize}
+\loose
+\fullline
+
+\section{MATHEMATICS EDUCATION EXPERIENCE}
+
+\title{Grad. Teaching \& Research Asst.}
+\employer{Montana State U.}
+\dates{Aug 2013 -- May 2015}
+\location{Bozeman, MT}
+\begin{position}
+Assistant to MSU faculty in Agricultural Finance, Agricultural Marketing, and Development Economics. Supported teaching and research duties including grading, assignment design, literature collection, and data gathering.
+
+\textbf{Education \& Research Highlights:}
+\begin{itemize}
+    \item Graded 400+ essays and homework assignments across undergraduate courses
+    \item Designed two course assignment sheets for Development Economics and prepared supporting instructional materials
+    \item Collected and organized 40+ journal articles on statistics education and pedagogy
+    \item Gathered raw price data from over 15 Montana grain elevators for related research projects
+\end{itemize}
+\end{position}
+
+\title{Math Instructor}
+\employer{Mathnasium}
+\dates{Feb 2013 -- Jul 2013}
+\location{Salt Lake City, UT}
+\begin{position}
+Tutored small groups (2--5 students) ages 6--18 using individualized Mathnasium curriculum as an extracurricular supplement to regular mathematics instruction.
+
+\textbf{Key activities:}
+\begin{itemize}
+    \item Delivered targeted lessons aligned to each student’s learning plan and tracked progress
+    \item Adapted instructional strategies for a range of abilities and ages
+    \item Communicated progress and recommendations to parents and center coordinators
+\end{itemize}
+\end{position}
+
+\title{Freelance Private Tutor}
+\employer{Self-Employed}
+\dates{Jan 2013 -- Jul 2013}
+\location{Greater Salt Lake City Area}
+\begin{position}
+	Provided one-on-one and small-group tutoring in Calculus, Algebra, and GRE quantitative preparation for students at the high-school and college levels.
+
+	\textbf{Highlights:}
+	\begin{itemize}
+		\item Customized lesson plans and practice problems to target student weaknesses
+		\item Prepared students for standardized exams with focused quantitative strategies
+	\end{itemize}
+\end{position}
+
+\title{Math Tutor}
+\employer{Westminster College}
+\dates{Jan 2012 -- Dec 2012}
+\location{Greater Salt Lake City Area}
+\begin{position}
+Tutored groups of 1--3 college students in College Algebra, Statistics, and Single-Variable Calculus; assisted with homework, exam preparation, and conceptual understanding.
+\end{position}
+
+\title{Gore Research Assistant in Mathematics}
+\employer{Westminster College}
+\dates{Jun 2012 -- Aug 2012}
+\location{Greater Salt Lake City Area}
+\begin{position}
+Researched differential expressions in pursuit of reproducing kernel equations applied to support vector machine (SVM) classification problems.
+\end{position}
+
+\loose
+\fullline
+ 
+\section{RECENT INDUSTRY EXPERIENCE}
+
+% Data Scientist (DEPT Agency)
+\title{Data Scientist}
+\employer{DEPT Agency}
+\dates{Mar 2024 -- 10 mos}
+\location{Remote (Salt Lake City, UT)}
+\begin{position}
+	Marketing data science for DEPT clients. Specialized in search engine ads, forecasting available ad impressions, and creating an ad-spend budgeting tool using prediction models based on historical data.
+
+    \textbf{Key Accomplishments:}
+	\begin{itemize}
+		\item \textbf{Search Engine Ad Impression Forecasting:} Took over responsibility for a TensorFlow ad impression forecasting LSTM model
+		\item \textbf{Ad-Budget Recommendations:} Built an ad-budget recommendation tool using XGBoost ensemble models that demonstrated our client was overspending on ads by \$100Ks in some ad categories
+		\item \textbf{Statistical Consulting:} various colleagues and projects. Gave an internal presentation on $p$-values
+	\end{itemize}
+\end{position}
+
+% ML Scientist (Bed Bath & Beyond)
+\title{ML Scientist}
+\employer{Bed Bath \& Beyond}
+\dates{Aug 2022 -- 1 yr 5 mos}
+\location{Hybrid (Salt Lake City, UT)}
+\begin{position}
+	Promoted to the ML team supporting sponsored ads as the junior scientist specializing in the application of XGBoost ensemble methods, and text embeddings to produce conversion (i.e., purchase) predictions. Proven track record in optimizing models, including testing XGBoost against a VowPal Wabbit production model, resulting in superior log-loss performance. Implemented text embedding, further elevating predictive accuracy.
+
+	\textbf{Key Accomplishments:}
+	\begin{itemize}
+		\item \textbf{Conversion Prediction:} Tested and produced several XGBoost models for conversion prediction that improved log-loss performance compared with Vowpal Wabbit production model
+		\item \textbf{Textual Embeddings:} Integrated embeddings into conversion prediction models. Built a Sci-Kit Learn TFIDF + Singular Value Decomposition (SVD) embedding class and compared model performance improvements with a fastText model. The latter toolset was demonstrated to be the more performant approach.
+	\end{itemize}
+\end{position}
+
+\loose
+\fullline
+
+\section{EDUCATION}
+
+
+
+\textbf{M.S. of Applied Economics -- May 2015 -- Montana State University --  Bozeman, MT}
+
+\subtext{
+	\textbf{Thesis}: 
+	\bref{https://www.slideshare.net/slideshow/embed\_code/key/K6qYsOYvj9u5Ab}{The Welfare Impacts of Engineers Without Borders in Western Kenya}
+}
+
+\textbf{B.A of International Relations -- May 2011 -- Cornell College -- Mount Vernon, IA}
+
+\end{resume}
+\end{document}
